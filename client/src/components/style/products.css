@@ -1,0 +1,49 @@
+
+
+.widd {
+    width:96%;
+    height: 77%;
+    object-fit: cover;
+    border-radius: 20px;
+}
+
+
+.product{
+    cursor: pointer;
+}
+.product img{
+    transition: 0.5s;
+}
+
+
+
+.product:hover img{
+opacity: 0.7;
+}
+
+
+.product .buy-btn{
+    background-color: brown;
+    transform: translateY(20px);
+    opacity: 0;
+    transition: 0.3 all;
+}
+
+
+.product:hover .buy-btn{
+    transform: translateY(0px);
+    opacity: 1;
+    transition: 0.3 all;
+}
+
+hr{
+    width: 130px;
+    min-height: 5px;
+    background-color: orangered;
+}
+
+.star i{
+font-size: 0.8rem;
+color: gold;
+margin: 4px;
+}
