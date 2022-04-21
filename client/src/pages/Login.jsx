@@ -80,7 +80,6 @@ const loginHandler=(e)=>{
   e.preventDefault()
   try{
     login(dispatch, {username, password});
-    window.location.replace("/")
     
   }
   catch(err){

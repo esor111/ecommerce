@@ -21,12 +21,10 @@ router.get("/:id", async (req, res) => {
   try {
     let productId = req.params.id;
     let review = await ReviewModel.find();
-    review = review.filter((review) => review.product._id == productId);
+    review = review.filter((review) => review.product?._id == productId);
     return res.json(review);
   } catch (err) {
-    res.json({
-      message: err.message,
-    });
+    res.status(500).json(err);
   }
 });
 
@@ -49,7 +47,7 @@ router.get("/", async (req, res) => {
 router.delete("/:id", async (req, res) => {
   try {
     let reviews = await ReviewModel.findByIdAndDelete(req.params.id);
-    res.status(200).json("review has been deleted");
+    res.status(200).json(reviews._id);
   } catch (err) {
     res.json({
       message: err.message,

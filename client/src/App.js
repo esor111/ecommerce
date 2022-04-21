@@ -1,57 +1,3 @@
-// import Home from "./pages/Home";
-// import {BrowserRouter as Router, Switch, Route, Redirect} from "react-router-dom"
-// import Products from "./components/Products";
-// import Product from "./pages/Product";
-// import Cart from "./pages/Cart"
-// import Login from "./pages/Login"
-// import Register from "./pages/Register"
-// import ProductList from "./pages/ProductList"
-// const App = () => {
-// const user =true  
-//   return(
-
-//     <>
-//     <Router>
-//     <Switch>
-
-//     <Route exact path="/" component={Home}>
-//     {user ? <Home/> : <Redirect to="/register"/>}
-//     </Route>
-
-//     <Route path="/products/:category" component={Products}>
-//     <ProductList/>
-//     </Route>
-
-
-//     <Route  path="/product/:id" component={Product}>
-//     <Product/>
-//     </Route>
-
-//     <Route  path="/cart" component={Cart}>
-//     <Cart/>
-//     </Route>
-    
- 
-//      <Route  path="/login" component={Login}>
-//      {user ? <Redirect to="/"/> : <Login/>}
-//      </Route>
-
-
-//     <Route exact path="/register" component={Register}>
-//     {user ? <Redirect to="/" /> : <Register/> }
-//     </Route>
-
-
-//     </Switch>
-//     </Router>
-//     </>
-
-//   )
-// };
-
-// export default App;
-
-
 
 import React from 'react'
 import Product from "./pages/Product"
@@ -73,6 +19,7 @@ import Adminprofileview from "./adminpage/adminprofileView";
 import { useSelector } from 'react-redux';
 const App = () => {
   const user = useSelector(state=>state.user.currentUser?.isAdmin)
+  console.log(user)
   return (
     <Router>
     <Switch>
@@ -85,7 +32,7 @@ const App = () => {
     </Route>
 
     <Route  path={"/adminproductList"} component={AdminProductList}>
-    {user ?<AdminProductList/> : <Redirect to="/"/>}
+   <AdminProductList/> 
     </Route>
 
     <Route  path={"/adminuserlist"} component={Adminuserlist}>

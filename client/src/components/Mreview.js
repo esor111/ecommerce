@@ -11,7 +11,7 @@ import { publicRequest } from "../requestMethod";
 const Mreview = ({ users }) => {
 
   const puser = useSelector(state=> state.user?.currentUser)
-  const review = useSelector(state=> state.review)
+  const review = useSelector(state=> state?.review)
   console.log(review)
   const dispatch = useDispatch();
   const deleteReview = async (id) => {
@@ -28,7 +28,7 @@ const Mreview = ({ users }) => {
   return (
     <div>
       {users.map((user) => (
-        <div key={user._id}>
+        <div >
           <div className=" justify-content-center col-md-3 col-10">
             <div className="content text-center">
               <div className="ratings">

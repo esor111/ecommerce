@@ -3,7 +3,7 @@ const router = require("express").Router();
 const Product = require("../models/Product");
 const { verifytokenAdmin, verifytokenandauth } = require("../routes/VerifyToken");
 
-router.post("/", verifytokenAdmin, async (req, res) => {
+router.post("/",  async (req, res) => {
 	const newProduct = new Product(req.body);
 	try {
 		let saveProduct = await newProduct.save();
@@ -13,7 +13,7 @@ router.post("/", verifytokenAdmin, async (req, res) => {
 	}
 });
 
-router.put("/:id", verifytokenAdmin, async (req, res) => {
+router.put("/:id",  async (req, res) => {
 	try {
 		const product = await Product.findByIdAndUpdate(
 			req.params.id,
@@ -28,7 +28,7 @@ router.put("/:id", verifytokenAdmin, async (req, res) => {
 	}
 });
 
-router.delete("/:id", verifytokenAdmin, async (req, res) => {
+router.delete("/:id", async (req, res) => {
 	try {
 		let product = await Product.findByIdAndDelete(req.params.id);
 		res.status(200).json(product._id);

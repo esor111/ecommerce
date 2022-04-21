@@ -62,7 +62,7 @@ const Product = () => {
   const [rating, setRating] = useState([]);
   const user = useSelector((state) => state.user.currentUser?._id);
   const curruser= useSelector((state) => state.user.currentUser);
-  const users = useSelector((state) => state.review?.review);
+  const users = useSelector((state) => state.review?.review)
 
   const [quantity, setQuantity] = useState(1);
   useEffect(() => {
@@ -245,13 +245,11 @@ const Product = () => {
            </form>
          </div>
        </div> :  <h1> please <button className="btn mt-3">login</button> to give a review</h1> }
-
-
+<Mreview users={users}/>
         </div>
       </section>
 
       <div className="container-fluid row">
-     <Mreview users={users} />
    </div>
     </div>
   );
